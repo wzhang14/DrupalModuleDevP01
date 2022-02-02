@@ -1,0 +1,23 @@
+hello_world.page:
+  path: '/hello'
+  defaults:
+    _controller: '\Drupal\hello_world\Controller\HelloController::helloWorld'
+    _title: 'Hello World'
+  requirements:
+    _permission: 'access content'
+
+hello_world.name_page:
+  path: '/hello/{name}'
+  defaults:
+    _controller: '\Drupal\hello_world\Controller\HelloController::hello'
+    _title_callback: '\Drupal\hello_world\Controller\HelloController::title'
+  requirements:
+    _permission: 'access content'
+
+hello_world.name_node_page:
+  path: '/hello/{name}/{nid}'
+  defaults:
+    _controller: '\Drupal\hello_world\Controller\HelloController::hello'
+    _title_callback: '\Drupal\hello_world\Controller\HelloController::title'
+  requirements:
+    _permission: 'access content'

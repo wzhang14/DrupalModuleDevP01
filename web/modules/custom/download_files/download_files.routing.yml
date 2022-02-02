@@ -1,0 +1,16 @@
+download_files.form:
+  path: '/download-files'
+  defaults:
+    _title: 'Download files'
+    _form: 'Drupal\download_files\Form\DownloadFilesForm'
+  requirements:
+    _permission: 'access download files form'
+download_files.download_files_config_form:
+  path: '/admin/config/media/download-files'
+  defaults:
+    _title: 'Download files config'
+    _form: 'Drupal\download_files\Form\DownloadFilesConfigForm'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE

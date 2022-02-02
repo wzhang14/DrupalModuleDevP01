@@ -1,0 +1,13 @@
+{# <iframe width="{{ width }}" height="{{ height }}" src="https://www.youtube.com/embed/{{ youtube_id }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> #}
+
+
+<h1>AllowFullScreen is {{ allowFullScreen == 1 ? 'TRUE' : 'FALSE' }} and {{ width }} x {{ height }}</h1> 
+
+{% set attributes = create_attribute() .setAttribute('width', width) .setAttribute('height', height) .setAttribute('src','https://www.youtube.com/embed/'~youtube_id) .setAttribute('title','video') .setAttribute('frameborder','0') .setAttribute('allow',"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture") %} 
+
+{% if allowFullScreen == 1 %} 
+  {% set attributes = attributes.setAttribute('allowfullscreen', allowFullScreen) %}
+{% endif %} 
+
+<iframe{{attributes}}></iframe> 
+

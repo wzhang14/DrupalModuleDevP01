@@ -1,0 +1,6 @@
+name: youtube video formatter
+type: module
+description: Youtube video field formatter to turn video ID into a Youtube video.
+package: Custom
+core: 8.x
+core_version_requirement: ^8 || ^9

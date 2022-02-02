@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * @file
+ * Contains hook definitions for hello_world module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ *
+ * Make promotion options open by default.
+ */
+function hello_world_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $wanted_forms = [
+    'node_article_form',
+  ];
+  if (in_array($form_id, $wanted_forms)) {
+    $form['options']['#open'] = true;
+    $user = \Drupal::currentUser();
+    ksm($user);
+    if (!$user->hasPermission('administer content')) {
+      $form['field_tags']['#access'] = FALSE;
+    }
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Make promotion options open by default.
+ */
+// function hello_world_form_node_article_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+//   $form['options']['#open'] = true;
+// }

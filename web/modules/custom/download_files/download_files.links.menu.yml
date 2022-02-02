@@ -1,0 +1,6 @@
+download_files.download_files_config_form_link:
+  title: 'Download Files Config Form'
+  route_name: download_files.download_files_config_form
+  description: 'The settings for Download Files module'
+  parent: system.admin_config_media
+  weight: 99
